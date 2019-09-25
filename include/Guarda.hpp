@@ -25,15 +25,13 @@ class Guarda {
 
 Guarda::Guarda(std::string metodo, std::string opcao) {}
 
-Guarda::Guarda(std::string metodo, std::string metodoSenha, std::string opcao) {}
-
 Guarda::Guarda(std::string metodo, std::string opcao, std::string pasta) {}
 
-Guarda::Guarda(std::string metodo, std::string metodoSenha, std::string opcao, std::string pasta) {}
+Guarda::Guarda(std::string metodo, bool f_key, std::string metodoSenha, std::string opcao, std::string pasta) {}
 
 Guarda::Guarda(std::string metodo, std::string opcao, std::string pasta, std::string saida) {}
 
-Guarda::Guarda(std::string metodo, std::string metodoSenha, std::string opcao, std::string pasta, std::string saida) {}
+Guarda::Guarda(std::string metodo, bool f_key, std::string metodoSenha, std::string opcao, std::string pasta, std::string saida) {}
 
 /**
  * @brief Construct a new Guarda:: Guarda object

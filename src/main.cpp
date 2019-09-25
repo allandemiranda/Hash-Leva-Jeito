@@ -10,6 +10,7 @@
  */
 
 #include <openssl/md5.h>
+#include <openssl/hmac.h>
 
 int main(int argc, char const *argv[]) {
   /* code */ 

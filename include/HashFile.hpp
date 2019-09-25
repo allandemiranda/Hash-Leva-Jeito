@@ -18,10 +18,12 @@ class HashFile {
  private:
   std::string hash;
   void setHash(std::string);
+  void setHmac(std::string, std::string);
 
  public:
   std::string getHash(void);
   HashFile(std::string);
+  HashFile(std::string, std::string);
   ~HashFile(void);
 };
 

@@ -9,33 +9,40 @@
  *
  */
 
-#include <openssl/md5.h>
-#include <openssl/hmac.h>
-#include <boost/iostreams/device/mapped_file.hpp>
-#include <iomanip>
-#include <sstream>
+#include <dirent.h>
+#include <cstdlib>
+#include <iostream>
+#include <string>
 
-const std::string md5_from_file(const std::string& path) {
-  unsigned char result[MD5_DIGEST_LENGTH];
-  boost::iostreams::mapped_file_source src(path);
-  char key[] = "012345678";
-  MD5((unsigned char*)src.data(), src.size(), result);
-  //HMAC(EVP_md5(),key,strlen(key),(unsigned char*)src.data(), src.size(),result,NULL);
+int listaArquivos(std::string nomeDir) {
+  DIR *dir = 0;
+  struct dirent *entrada = 0;
+  unsigned char isDir = 0x4;
+  unsigned char isFile = 0x8;
 
-  std::ostringstream sout;
-  sout << std::hex << std::setfill('0');
-  for (auto c : result) sout << std::setw(2) << (int)c;
+  dir = opendir(nomeDir.c_str());
 
-  return sout.str();
+  if (dir == 0) {
+    std::cerr << "Nao foi possivel abrir diretorio." << std::endl;
+    exit(1);
+  }
+
+  // Iterar sobre o diretorio
+  while (entrada = readdir(dir))
+    std::cout << entrada->d_name << std::endl;
+
+  closedir(dir);
+
+  return 0;
 }
 
-#include <iostream>
-
 int main(int argc, char *argv[]) {
-    if(argc != 2) {
-        std::cerr<<"Must specify the file\n";
-        exit(-1);
-    }
-    std::cout<<md5_from_file(argv[1])<<"  "<<argv[1]<<std::endl;
-    return 0;
+  if (argc != 2) {
+    std::cerr << "Diretorio nao fornecido." << std::endl;
+    exit(1);
+  }
+
+  listaArquivos(argv[1]);
+
+  return 0;
 }

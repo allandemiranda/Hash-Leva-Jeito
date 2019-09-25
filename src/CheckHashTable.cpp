@@ -10,8 +10,9 @@
  */
 
 #include "CheckHashTable.hpp"
-#include <string>  // std::string
-#include <vector>  // std::vector
+#include <iostream>  // std::cout, std::endl
+#include <string>    // std::string
+#include <vector>    // std::vector
 #include "HashFile.hpp"
 #include "Log.hpp"
 
@@ -104,4 +105,14 @@ void CheckHashTable::setNewStatus(std::string status, std::string path) {
  */
 std::vector<Log> CheckHashTable::getStatusLogVector(void) {
   return status_logs;
+}
+
+/**
+ * @brief Imprimir na tela o vetor status de logs
+ *
+ */
+void CheckHashTable::showStatusLog(void) {
+  for (Log log : status_logs) {
+    std::cout << log.getFilePath() << "   " << log.getHash() << std::endl;
+  }
 }

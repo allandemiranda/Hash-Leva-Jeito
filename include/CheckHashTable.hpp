@@ -22,6 +22,7 @@ class CheckHashTable {
   void setNewStatus(std::string, std::string);
 
  public:
+  void showStatusLog(void);
   std::vector<Log> getStatusLogVector(void);
   CheckHashTable(std::vector<std::string>, std::vector<Log>);
   CheckHashTable(std::vector<std::string>, std::vector<Log>, std::string);

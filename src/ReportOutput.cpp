@@ -42,7 +42,7 @@ void setFileOut(std::vector<Log> logs, std::string path) {
   try {
     std::ofstream newFile;
     std::string fileName = path;
-    newFile.open(fileName, std::ios::app);
+    newFile.open(fileName, std::ios::trunc);
     for (auto i(0u); i < logs.size(); ++i) {
       newFile << logs[i].getHash() << " " << logs[i].getFilePath() << std::endl;
     }

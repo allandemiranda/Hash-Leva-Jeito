@@ -25,7 +25,23 @@ CreateHashTable::CreateHashTable(std::vector<std::string> path) {
     HashFile newFile(path_file);
     std::string md5_hash = newFile.getHash();
     Log newLog(md5_hash, path_file);
-    hash_table.push_back(newLog);
+    setNewHashInTable(newLog);
+  }
+}
+
+/**
+ * @brief Create a Hash Table object
+ *
+ * @param path Vetor de caminho de arquivos
+ * @param key Chave
+ */
+CreateHashTable::CreateHashTable(std::vector<std::string> path,
+                                 std::string key) {
+  for (std::string path_file : path) {
+    HashFile newFile(path_file, key);
+    std::string md5_hash = newFile.getHash();
+    Log newLog(md5_hash, path_file);
+    setNewHashInTable(newLog);
   }
 }
 

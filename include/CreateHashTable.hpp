@@ -24,6 +24,7 @@ class CreateHashTable {
  public:
   std::vector<Log> getHashTable(void);
   CreateHashTable(std::vector<std::string>);
+  CreateHashTable(std::vector<std::string>, std::string);
   ~CreateHashTable(void);
 };
 

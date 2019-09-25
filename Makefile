@@ -9,9 +9,9 @@ LIB		:= lib
 LIBRARIES	:=
 
 ifeq ($(OS),Windows_NT)
-EXECUTABLE	:= main.exe
+EXECUTABLE	:= guarda.exe
 else
-EXECUTABLE	:= main.o
+EXECUTABLE	:= guarda.o
 endif
 
 all: $(BIN)/$(EXECUTABLE)

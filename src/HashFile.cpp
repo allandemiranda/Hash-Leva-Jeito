@@ -31,7 +31,7 @@ HashFile::~HashFile(void) {}
 /**
  * @brief Get the Hash object
  *
- * @return std::string
+ * @return std::string Hash
  */
 std::string HashFile::getHash(void) { return hash; }
 

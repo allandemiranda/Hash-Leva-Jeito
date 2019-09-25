@@ -28,48 +28,4 @@ class CheckHashTable {
   ~CheckHashTable(void);
 };
 
-/**
- * @brief Construct a new Check Hash Table:: Check Hash Table object
- *
- * @param fileTable Tabela de arquivos da pasta
- * @param logTable Tabela de log existente
- */
-CheckHashTable::CheckHashTable(std::vector<std::string> fileTable,
-                               std::vector<Log> logTable) {
-    for(Log log : logTable){
-        for(auto i(0u); i<fileTable.size(); ++i){
-            if(log.getFilePath() == fileTable[i]){
-                
-            }
-        }
-    }
-    
-
-}
-
-CheckHashTable::CheckHashTable(std::vector<std::string> fileTable,
-                               std::vector<Log> logTable, std::string key) {}
-
-CheckHashTable::~CheckHashTable(void) {}
-
-/**
- * @brief Set the New Status object
- *
- * @param status Status do arquivo
- * @param path Caminho do arquivo
- */
-void CheckHashTable::setNewStatus(std::string status, std::string path) {
-  Log tempLog(status, path);
-  status_logs.push_back(tempLog);
-}
-
-/**
- * @brief Get the Status Log Vector object
- *
- * @return std::vector<Log> Vetor com os logs finais
- */
-std::vector<Log> CheckHashTable::getStatusLogVector(void) {
-  return status_logs;
-}
-
 #endif

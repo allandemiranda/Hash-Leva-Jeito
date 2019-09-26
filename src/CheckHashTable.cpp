@@ -10,6 +10,7 @@
  */
 
 #include "CheckHashTable.hpp"
+#include <iomanip>
 #include <iostream>  // std::cout, std::endl
 #include <string>    // std::string
 #include <vector>    // std::vector
@@ -112,7 +113,70 @@ std::vector<Log> CheckHashTable::getStatusLogVector(void) {
  *
  */
 void CheckHashTable::showStatusLog(void) {
+  std::cout << std::endl;
+  unsigned int sizePath = 0;
+  unsigned int sizeStatus = 0;
   for (Log log : status_logs) {
-    std::cout << log.getFilePath() << "   " << log.getHash() << std::endl;
+    unsigned int sizePathTemp = log.getFilePath().size();
+    if (sizePathTemp > sizePath) {
+      sizePath = sizePathTemp;
+    }
+    unsigned int sizeStatusTemp = log.getHash().size();
+    if (sizeStatusTemp > sizeStatus) {
+      sizeStatus = sizeStatusTemp;
+    }
   }
+  sizePath += 3;
+  sizeStatus += 3;
+  std::cout << "+";
+  std::cout << std::setw(sizePath) << std::setfill('-') << "";
+  std::cout << "+";
+  std::cout << std::setw(sizeStatus) << "";
+  std::cout << "+" << std::endl;
+  std::cout << "|";
+  std::cout << std::setw(sizePath) << std::setfill(' ') << std::left
+            << " CAMINHO";
+  std::cout << "|";
+  std::cout << std::setw(sizeStatus) << " STATUS";
+  std::cout << "|" << std::endl;
+  std::cout << "+";
+  std::cout << std::setw(sizePath) << std::setfill('-') << "";
+  std::cout << "+";
+  std::cout << std::setw(sizeStatus) << "";
+  std::cout << "+" << std::endl;
+  std::cout << std::setfill(' ');
+  const std::string red("\033[0;31m");
+  const std::string green("\033[1;32m");
+  const std::string yellow("\033[1;33m");
+  const std::string cyan("\033[0;36m");
+  const std::string reset("\033[0m");
+  for (Log log : status_logs) {
+    std::cout << "| ";
+    std::cout << std::setw(sizePath - 1) << log.getFilePath() << "";
+    std::cout << "| ";
+    if (log.getHash() == "Arquivo Não Modificado") {
+      std::cout << cyan + log.getHash() + reset
+                << std::setw(sizeStatus - log.getHash().size()) << "";
+    } else {
+      if (log.getHash() == "Arquivo Criado") {
+        std::cout << green + log.getHash() + reset
+                  << std::setw(sizeStatus - log.getHash().size() - 1) << "";
+      }
+      if (log.getHash() == "Arquivo Deletado") {
+        std::cout << red + log.getHash() + reset
+                  << std::setw(sizeStatus - log.getHash().size() - 1) << "";
+      }
+      if (log.getHash() == "Arquivo Modificado") {
+        std::cout << yellow + log.getHash() + reset
+                  << std::setw(sizeStatus - log.getHash().size() - 1) << "";
+      }
+    }
+    std::cout << "|" << std::endl;
+  }
+  std::cout << "+";
+  std::cout << std::setw(sizePath) << std::setfill('-') << "";
+  std::cout << "+";
+  std::cout << std::setw(sizeStatus) << "";
+  std::cout << "+" << std::endl;
+  std::cout << std::endl;
 }

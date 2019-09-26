@@ -47,7 +47,7 @@ std::vector<std::string> ReadingFolderFiles::getListPath(void) {
 void ReadingFolderFiles::getFilesPath(std::string path) {
   DIR *dir = 0;
   struct dirent *entrada = 0;
-  unsigned char isDir = 0x4;
+  // unsigned char isDir = 0x4;
   unsigned char isFile = 0x8;
   dir = opendir(path.c_str());
   if (dir == 0) {
@@ -60,10 +60,11 @@ void ReadingFolderFiles::getFilesPath(std::string path) {
         new_file_path += entrada->d_name;
         list_path.push_back(new_file_path);
       } else {
-        if ((entrada->d_name != ".") or (entrada->d_name != "..")) {
+        if (*entrada->d_name != '.') {
           std::string new_file_loop;
           new_file_loop = path;
           new_file_loop += entrada->d_name;
+          new_file_loop.push_back('/');
           getFilesPath(new_file_loop);
         }
       }

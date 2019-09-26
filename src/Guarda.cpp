@@ -92,7 +92,8 @@ Guarda::Guarda(std::string metodoSenha, std::string opcao, std::string pasta) {
  * metodo -hash Método Hash MD5
  * @param opcao -t Checa arquivo mapa hash
  * @param pasta Indica a pasta a ser “guardada”
- * @param saida Indica o arquivo de saída para o relatório
+ * @param saida Indica que deseja salvar relatório
+ * @param saidaArquivo Indica onde deseja salvar relatório
  */
 Guarda::Guarda(std::string opcao, std::string pasta, std::string saida,
                std::string saidaArquivo) {

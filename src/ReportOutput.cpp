@@ -38,7 +38,7 @@ ReportOutput::~ReportOutput(void) {}
  * @param logs Vetor com os logs a ser salvo em um arquivo de texto
  * @param path Caminho do arquivo para salvar
  */
-void setFileOut(std::vector<Log> logs, std::string path) {
+void ReportOutput::setFileOut(std::vector<Log> logs, std::string path) {
   try {
     std::ofstream newFile;
     std::string fileName = path;

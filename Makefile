@@ -1,5 +1,5 @@
 CC		:= g++
-C_FLAGS := -std=c++17 -Wall -Wextra -fopenmp -lcrypto -lboost_iostreams
+C_FLAGS := -std=c++17 -Wall -Wextra
 
 BIN		:= bin
 SRC		:= src
@@ -23,4 +23,4 @@ run: all
 	./$(BIN)/$(EXECUTABLE)
 
 $(BIN)/$(EXECUTABLE): $(SRC)/*
-	$(CC) $(C_FLAGS) -I $(INCLUDE) -L $(LIB) $^ -o $@ $(LIBRARIES)
+	$(CC) $(C_FLAGS) -I $(INCLUDE) -L $(LIB) $^ -o $@ $(LIBRARIES) -fopenmp -lcrypto -lboost_iostreams

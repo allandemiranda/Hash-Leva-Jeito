@@ -11,7 +11,7 @@ LIBRARIES	:=
 ifeq ($(OS),Windows_NT)
 EXECUTABLE	:= guarda.exe
 else
-EXECUTABLE	:= guarda.o
+EXECUTABLE	:= guarda
 endif
 
 all: $(BIN)/$(EXECUTABLE)

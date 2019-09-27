@@ -2,7 +2,7 @@
  * @file CheckHashTable.cpp
  * @author Allan de Miranda Silva (allandemiranda@gmail.com)
  * @brief Metodos da classe CheckHashTable
- * @version 0.1
+ * @version 0.2
  * @date 25-09-2019
  *
  * @copyright Copyright (c) 2019
@@ -68,7 +68,7 @@ CheckHashTable::CheckHashTable(std::vector<std::string> fileTable,
         HashFile tempHF(fileTable[i], key);
         std::string tempHash = tempHF.getHash();
         if (log.getHash() == tempHash) {
-          setNewStatus("Arquivo Não Modificado", log.getFilePath());
+          // setNewStatus("Arquivo Não Modificado", log.getFilePath());
         } else {
           setNewStatus("Arquivo Modificado", log.getFilePath());
         }
@@ -155,8 +155,8 @@ void CheckHashTable::showStatusLog(void) {
     std::cout << std::setw(sizePath - 1) << log.getFilePath() << "";
     std::cout << "| ";
     if (log.getHash() == "Arquivo Não Modificado") {
-      std::cout << cyan + log.getHash() + reset
-                << std::setw(sizeStatus - log.getHash().size()) << "";
+      // std::cout << cyan + log.getHash() + reset
+      //           << std::setw(sizeStatus - log.getHash().size()) << "";
     } else {
       if (log.getHash() == "Arquivo Criado") {
         std::cout << green + log.getHash() + reset

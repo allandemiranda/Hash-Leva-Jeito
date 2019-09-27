@@ -2,7 +2,7 @@
  * @file Guarda.hpp
  * @author Allan de Miranda Silva (allandemiranda@gmail.com)
  * @brief Classe de controle
- * @version 0.1
+ * @version 0.2
  * @date 25-09-2019
  *
  * @copyright Copyright (c) 2019
@@ -16,14 +16,14 @@
 
 class Guarda {
  private:
-  std::string outFileData = "data/table.guarda";
+  std::string outFileData = ".guarda/data.g";
+  void setOutFileData(std::string);
 
  public:
-  Guarda(std::string);
   Guarda(std::string, std::string);
   Guarda(std::string, std::string, std::string);
-  Guarda(std::string, std::string, std::string, std::string);
-  Guarda(std::string, std::string, std::string, std::string, std::string);
+  Guarda(std::string, std::string, bool, std::string);
+  Guarda(std::string, std::string, std::string, bool, std::string);
   ~Guarda(void);
 };
 

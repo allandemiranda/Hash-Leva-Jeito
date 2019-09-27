@@ -2,7 +2,7 @@
  * @file CheckHashTable.hpp
  * @author Allan de Miranda Silva (allandemiranda@gmail.com)
  * @brief Classe para comparar os arquivos com o da tabela de configuraçao
- * @version 0.1
+ * @version 0.2
  * @date 25-09-2019
  *
  * @copyright Copyright (c) 2019

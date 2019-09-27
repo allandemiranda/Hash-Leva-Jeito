@@ -23,8 +23,8 @@
  */
 int main(int argc, char* argv[]) {
   const char* const short_opts = "i:t:x:o:";
-  const option long_opts[] = {{"hmac", required_argument, nullptr, 'hmac'},
-                              {"hash", no_argument, nullptr, 'hash'}};
+  const option long_opts[] = {{"hmac", required_argument, nullptr, 'a'},
+                              {"hash", no_argument, nullptr, 'b'}};
   int opt;
   bool metodo = false;
   std::string senha = "";
@@ -95,7 +95,7 @@ int main(int argc, char* argv[]) {
           pastaSaida = optarg;
         }
         break;
-      case 'hmac':
+      case 'a':
         if (metodo == true) {
           std::cout << "Opção inválida ou faltando argumento" << std::endl;
           return EXIT_FAILURE;
@@ -110,7 +110,7 @@ int main(int argc, char* argv[]) {
           senha = optarg;
         }
         break;
-      case 'hash':
+      case 'b':
         if (metodo == true) {
           std::cout << "Opção inválida ou faltando argumento" << std::endl;
           return EXIT_FAILURE;
@@ -124,11 +124,11 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
   }
-  if (metodo) {
+  if (!metodo) {
     std::cout << "Opção inválida ou faltando argumento" << std::endl;
     return EXIT_FAILURE;
   }
-  if (setOpcao) {
+  if (!setOpcao) {
     std::cout << "Opção inválida ou faltando argumento" << std::endl;
     return EXIT_FAILURE;
   }

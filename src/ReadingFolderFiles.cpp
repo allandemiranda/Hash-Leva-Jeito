@@ -49,6 +49,14 @@ void ReadingFolderFiles::getFilesPath(std::string path) {
   struct dirent *entrada = 0;
   // unsigned char isDir = 0x4;
   unsigned char isFile = 0x8;
+  if (path.back() != '/') {
+    path.push_back('/');
+  }
+  if (path.front() == '.') {
+    if (*(path.begin() + 1) == '/') {
+      path.erase(0, 2);
+    }
+  }
   dir = opendir(path.c_str());
   if (dir == 0) {
     throw "ERRO! Não foi possivel abrir o diretório";

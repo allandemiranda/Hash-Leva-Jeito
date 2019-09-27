@@ -1,0 +1,98 @@
+.TH "CreateHashTable" 3 "Fri Sep 27 2019" "Operação “Leva Jeito”" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CreateHashTable
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CreateHashTable\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBshowLog\fP (void)"
+.br
+.RI "Mostar o log da tabela criada\&. "
+.ti -1c
+.RI "std::vector< \fBLog\fP > \fBgetHashTable\fP (void)"
+.br
+.RI "Get the Hash Table object\&. "
+.ti -1c
+.RI "\fBCreateHashTable\fP (std::vector< std::string >)"
+.br
+.RI "Create a Hash Table:: Create Hash Table object\&. "
+.ti -1c
+.RI "\fBCreateHashTable\fP (std::vector< std::string >, std::string)"
+.br
+.RI "Create a Hash Table object\&. "
+.ti -1c
+.RI "\fB~CreateHashTable\fP (void)"
+.br
+.RI "Create a Hash Table::~ Create Hash Table object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 19 of file CreateHashTable\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CreateHashTable::CreateHashTable (std::vector< std::string > path)"
+
+.PP
+Create a Hash Table:: Create Hash Table object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP Vetor de caminho de arquivos 
+.RE
+.PP
+
+.PP
+Definition at line 25 of file CreateHashTable\&.cpp\&.
+.SS "CreateHashTable::CreateHashTable (std::vector< std::string > path, std::string key)"
+
+.PP
+Create a Hash Table object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP Vetor de caminho de arquivos 
+.br
+\fIkey\fP Chave 
+.RE
+.PP
+
+.PP
+Definition at line 40 of file CreateHashTable\&.cpp\&.
+.SS "CreateHashTable::~CreateHashTable (void)"
+
+.PP
+Create a Hash Table::~ Create Hash Table object\&. 
+.PP
+Definition at line 54 of file CreateHashTable\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< \fBLog\fP > CreateHashTable::getHashTable (void)"
+
+.PP
+Get the Hash Table object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+std::vector<Log> Vetor de logs gerado 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file CreateHashTable\&.cpp\&.
+.SS "void CreateHashTable::showLog (void)"
+
+.PP
+Mostar o log da tabela criada\&. 
+.PP
+Definition at line 76 of file CreateHashTable\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Operação “Leva Jeito” from the source code\&.

@@ -27,9 +27,9 @@
  * @param pasta Pasta a ser operada
  */
 Guarda::Guarda(std::string opcao, std::string pasta) {
-  setOutFileData(pasta);
+  setOutFileData(correctionPath(pasta));
   if (opcao == "x") {
-    std::string deletFile = "rm -r";
+    std::string deletFile = "rm -r ";    
     deletFile += outFileData;
     char a[deletFile.size() + 1];
     strcpy(a, deletFile.c_str());
@@ -61,9 +61,9 @@ Guarda::Guarda(std::string opcao, std::string pasta) {
  * @param senha Senha Hmac
  */
 Guarda::Guarda(std::string opcao, std::string pasta, std::string senha) {
-  setOutFileData(pasta);
+  setOutFileData(correctionPath(pasta));
   if (opcao == "x") {
-    std::string deletFile = "rm -r";
+    std::string deletFile = "rm -r ";    
     deletFile += outFileData;
     char a[deletFile.size() + 1];
     strcpy(a, deletFile.c_str());
@@ -82,13 +82,13 @@ Guarda::Guarda(std::string opcao, std::string pasta, std::string senha) {
     CheckHashTable start(pathReading.getListPath(), tableLog.getLogTable(),
                          senha);
     start.showStatusLog();
-    CreateHashTable table(pathReading.getListPath());
+    CreateHashTable table(pathReading.getListPath(), senha);
     ReportOutput fileSave(table.getHashTable(), outFileData);
   }
 }
 
 /**
- * @brief Construct a new Guarda:: Guarda object para método HMAC e com saída em
+ * @brief Construct a new Guarda:: Guarda object para método HASH e com saída em
  * arquivo
  * @param opcao Opção selecionada
  * @param pasta Pasta a ser operada
@@ -100,9 +100,9 @@ Guarda::Guarda(std::string opcao, std::string pasta, bool saida,
   if (!saida) {
     throw "ERRO! Opção incompatível";
   }
-  setOutFileData(pasta);
+  setOutFileData(correctionPath(pasta));
   if (opcao == "x") {
-    std::string deletFile = "rm -r";
+    std::string deletFile = "rm -r ";    
     deletFile += outFileData;
     char a[deletFile.size() + 1];
     strcpy(a, deletFile.c_str());
@@ -112,7 +112,7 @@ Guarda::Guarda(std::string opcao, std::string pasta, bool saida,
   if (opcao == "i") {
     ReadingFolderFiles pathReading(pasta);
     CreateHashTable table(pathReading.getListPath());
-    ReportOutput fileSaveDestino(table.getHashTable(), destino);
+    ReportOutput fileSaveDestino(table.getHashTable(), correctionPath(destino));
     ReportOutput fileSave(table.getHashTable(), outFileData);
     std::cout << "Table Hash criada" << std::endl;
   }
@@ -120,6 +120,8 @@ Guarda::Guarda(std::string opcao, std::string pasta, bool saida,
     ReadingFolderFiles pathReading(pasta);
     OpenLogFile tableLog(outFileData);
     CheckHashTable start(pathReading.getListPath(), tableLog.getLogTable());
+    ReportOutput fileSaveDestino(start.getStatusLogVector(),
+                                 correctionPath(destino));
     CreateHashTable table(pathReading.getListPath());
     ReportOutput fileSave(table.getHashTable(), outFileData);
     std::cout << "Table Hash gerada" << std::endl;
@@ -141,9 +143,9 @@ Guarda::Guarda(std::string opcao, std::string pasta, std::string senha,
   if (!saida) {
     throw "ERRO! Opção incompatível";
   }
-  setOutFileData(pasta);
+  setOutFileData(correctionPath(pasta));
   if (opcao == "x") {
-    std::string deletFile = "rm -r";
+    std::string deletFile = "rm -r ";    
     deletFile += outFileData;
     char a[deletFile.size() + 1];
     strcpy(a, deletFile.c_str());
@@ -153,7 +155,7 @@ Guarda::Guarda(std::string opcao, std::string pasta, std::string senha,
   if (opcao == "i") {
     ReadingFolderFiles pathReading(pasta);
     CreateHashTable table(pathReading.getListPath(), senha);
-    ReportOutput fileSaveDestino(table.getHashTable(), destino);
+    ReportOutput fileSaveDestino(table.getHashTable(), correctionPath(destino));
     ReportOutput fileSave(table.getHashTable(), outFileData);
     std::cout << "Table Hash criada" << std::endl;
   }
@@ -162,6 +164,8 @@ Guarda::Guarda(std::string opcao, std::string pasta, std::string senha,
     OpenLogFile tableLog(outFileData);
     CheckHashTable start(pathReading.getListPath(), tableLog.getLogTable(),
                          senha);
+    ReportOutput fileSaveDestino(start.getStatusLogVector(),
+                                 correctionPath(destino));
     CreateHashTable table(pathReading.getListPath(), senha);
     ReportOutput fileSave(table.getHashTable(), outFileData);
     std::cout << "Table Hash gerada" << std::endl;
@@ -186,4 +190,19 @@ void Guarda::setOutFileData(std::string pathFile) {
     outFileData.insert(0, "/");
     outFileData.insert(0, pathFile);
   }
+}
+
+/**
+ * @brief Corrigir o ./ inicial da pasta
+ *
+ * @param path
+ * @return std::string
+ */
+std::string Guarda::correctionPath(std::string path) {
+  if (path.front() == '.') {
+    if (*(path.begin() + 1) == '/') {
+      path.erase(0, 2);
+    }
+  }
+  return path;
 }

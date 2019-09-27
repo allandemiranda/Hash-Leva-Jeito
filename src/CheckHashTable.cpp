@@ -33,7 +33,7 @@ CheckHashTable::CheckHashTable(std::vector<std::string> fileTable,
         HashFile tempHF(fileTable[i]);
         std::string tempHash = tempHF.getHash();
         if (log.getHash() == tempHash) {
-          setNewStatus("Arquivo Não Modificado", log.getFilePath());
+          // setNewStatus("Arquivo Não Modificado", log.getFilePath());
         } else {
           setNewStatus("Arquivo Modificado", log.getFilePath());
         }
@@ -151,27 +151,39 @@ void CheckHashTable::showStatusLog(void) {
   const std::string cyan("\033[0;36m");
   const std::string reset("\033[0m");
   for (Log log : status_logs) {
-    std::cout << "| ";
-    std::cout << std::setw(sizePath - 1) << log.getFilePath() << "";
-    std::cout << "| ";
     if (log.getHash() == "Arquivo Não Modificado") {
+      // std::cout << "| ";
+      // std::cout << std::setw(sizePath - 1) << log.getFilePath() << "";
+      // std::cout << "| ";
       // std::cout << cyan + log.getHash() + reset
       //           << std::setw(sizeStatus - log.getHash().size()) << "";
+      // std::cout << "|" << std::endl;
     } else {
       if (log.getHash() == "Arquivo Criado") {
+        std::cout << "| ";
+        std::cout << std::setw(sizePath - 1) << log.getFilePath() << "";
+        std::cout << "| ";
         std::cout << green + log.getHash() + reset
                   << std::setw(sizeStatus - log.getHash().size() - 1) << "";
+        std::cout << "|" << std::endl;
       }
       if (log.getHash() == "Arquivo Deletado") {
+        std::cout << "| ";
+        std::cout << std::setw(sizePath - 1) << log.getFilePath() << "";
+        std::cout << "| ";
         std::cout << red + log.getHash() + reset
                   << std::setw(sizeStatus - log.getHash().size() - 1) << "";
+        std::cout << "|" << std::endl;
       }
       if (log.getHash() == "Arquivo Modificado") {
+        std::cout << "| ";
+        std::cout << std::setw(sizePath - 1) << log.getFilePath() << "";
+        std::cout << "| ";
         std::cout << yellow + log.getHash() + reset
                   << std::setw(sizeStatus - log.getHash().size() - 1) << "";
+        std::cout << "|" << std::endl;
       }
     }
-    std::cout << "|" << std::endl;
   }
   std::cout << "+";
   std::cout << std::setw(sizePath) << std::setfill('-') << "";

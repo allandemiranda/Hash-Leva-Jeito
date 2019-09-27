@@ -1,0 +1,99 @@
+.TH "CheckHashTable" 3 "Fri Sep 27 2019" "Operação “Leva Jeito”" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CheckHashTable
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CheckHashTable\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBshowStatusLog\fP (void)"
+.br
+.RI "Imprimir na tela o vetor status de logs\&. "
+.ti -1c
+.RI "std::vector< \fBLog\fP > \fBgetStatusLogVector\fP (void)"
+.br
+.RI "Get the Status \fBLog\fP Vector object\&. "
+.ti -1c
+.RI "\fBCheckHashTable\fP (std::vector< std::string >, std::vector< \fBLog\fP >)"
+.br
+.RI "Construct a new Check Hash Table:: Check Hash Table object\&. "
+.ti -1c
+.RI "\fBCheckHashTable\fP (std::vector< std::string >, std::vector< \fBLog\fP >, std::string)"
+.br
+.RI "Construct a new Check Hash Table:: Check Hash Table object\&. "
+.ti -1c
+.RI "\fB~CheckHashTable\fP (void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 19 of file CheckHashTable\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CheckHashTable::CheckHashTable (std::vector< std::string > fileTable, std::vector< \fBLog\fP > logTable)"
+
+.PP
+Construct a new Check Hash Table:: Check Hash Table object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileTable\fP Tabela de arquivos da pasta 
+.br
+\fIlogTable\fP Tabela de log existente 
+.RE
+.PP
+
+.PP
+Definition at line 26 of file CheckHashTable\&.cpp\&.
+.SS "CheckHashTable::CheckHashTable (std::vector< std::string > fileTable, std::vector< \fBLog\fP > logTable, std::string key)"
+
+.PP
+Construct a new Check Hash Table:: Check Hash Table object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileTable\fP Tabela de arquivos da pasta 
+.br
+\fIlogTable\fP Tabela de log existente 
+.br
+\fIkey\fP Chave 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file CheckHashTable\&.cpp\&.
+.SS "CheckHashTable::~CheckHashTable (void)"
+
+.PP
+Definition at line 89 of file CheckHashTable\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< \fBLog\fP > CheckHashTable::getStatusLogVector (void)"
+
+.PP
+Get the Status \fBLog\fP Vector object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+std::vector<Log> Vetor com os logs finais 
+.RE
+.PP
+
+.PP
+Definition at line 107 of file CheckHashTable\&.cpp\&.
+.SS "void CheckHashTable::showStatusLog (void)"
+
+.PP
+Imprimir na tela o vetor status de logs\&. 
+.PP
+Definition at line 115 of file CheckHashTable\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Operação “Leva Jeito” from the source code\&.

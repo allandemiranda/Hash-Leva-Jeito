@@ -159,7 +159,7 @@ int main(int argc, char* argv[]) {
     }
     return EXIT_SUCCESS;
   }
-  if ((hmac == true) and (saida == false)) {
+  if ((hmac == true) and (saida == true)) {
     try {
       Guarda(opcao, pasta, senha, saida, pastaSaida);
     } catch (const char* msg) {

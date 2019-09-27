@@ -1,0 +1,132 @@
+.TH "Log" 3 "Fri Sep 27 2019" "Operação “Leva Jeito”" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Log
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Log\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLog\fP (std::string, std::string)"
+.br
+.RI "Construct a new \fBLog\fP:: \fBLog\fP object\&. "
+.ti -1c
+.RI "\fBLog\fP (void)"
+.br
+.RI "Construct a new \fBLog\fP:: \fBLog\fP object\&. "
+.ti -1c
+.RI "std::string \fBgetHash\fP (void)"
+.br
+.RI "Get the Hash object\&. "
+.ti -1c
+.RI "std::string \fBgetFilePath\fP (void)"
+.br
+.RI "Get the File Path object\&. "
+.ti -1c
+.RI "void \fBsetHash\fP (std::string)"
+.br
+.RI "Set the Hash object\&. "
+.ti -1c
+.RI "void \fBsetFilePath\fP (std::string)"
+.br
+.RI "Set the File Path object\&. "
+.ti -1c
+.RI "\fB~Log\fP (void)"
+.br
+.RI "Destroy the \fBLog\fP:: \fBLog\fP object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file Log\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Log::Log (std::string new_hash_md5, std::string new_file_path)"
+
+.PP
+Construct a new \fBLog\fP:: \fBLog\fP object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInew_hash_md5\fP Hash para guardar 
+.br
+\fInew_file_path\fP Caminho do arquivo guardar 
+.RE
+.PP
+
+.PP
+Definition at line 21 of file Log\&.cpp\&.
+.SS "Log::Log (void)"
+
+.PP
+Construct a new \fBLog\fP:: \fBLog\fP object\&. 
+.PP
+Definition at line 30 of file Log\&.cpp\&.
+.SS "Log::~Log (void)"
+
+.PP
+Destroy the \fBLog\fP:: \fBLog\fP object\&. 
+.PP
+Definition at line 36 of file Log\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string Log::getFilePath (void)"
+
+.PP
+Get the File Path object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+std::string Caminho do arquivo guradado 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file Log\&.cpp\&.
+.SS "std::string Log::getHash (void)"
+
+.PP
+Get the Hash object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+std::string Hash gurdada 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file Log\&.cpp\&.
+.SS "void Log::setFilePath (std::string new_path)"
+
+.PP
+Set the File Path object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInew_path\fP Novo caminho a quardar 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file Log\&.cpp\&.
+.SS "void Log::setHash (std::string new_hash)"
+
+.PP
+Set the Hash object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInew_hash\fP Nova hash a guradar 
+.RE
+.PP
+
+.PP
+Definition at line 57 of file Log\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Operação “Leva Jeito” from the source code\&.

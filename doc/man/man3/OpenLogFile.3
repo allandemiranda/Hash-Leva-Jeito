@@ -1,0 +1,69 @@
+.TH "OpenLogFile" 3 "Fri Sep 27 2019" "Operação “Leva Jeito”" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OpenLogFile
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <OpenLogFile\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBLog\fP > \fBgetLogTable\fP (void)"
+.br
+.RI "Get the \fBLog\fP Table object\&. "
+.ti -1c
+.RI "\fBOpenLogFile\fP (std::string)"
+.br
+.RI "Construct a new Open \fBLog\fP File:: Open \fBLog\fP File object\&. "
+.ti -1c
+.RI "\fB~OpenLogFile\fP (void)"
+.br
+.RI "Destroy the Open \fBLog\fP File:: Open \fBLog\fP File object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 19 of file OpenLogFile\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "OpenLogFile::OpenLogFile (std::string path)"
+
+.PP
+Construct a new Open \fBLog\fP File:: Open \fBLog\fP File object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP Caminho do arquivo de configuração 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file OpenLogFile\&.cpp\&.
+.SS "OpenLogFile::~OpenLogFile (void)"
+
+.PP
+Destroy the Open \fBLog\fP File:: Open \fBLog\fP File object\&. 
+.PP
+Definition at line 30 of file OpenLogFile\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< \fBLog\fP > OpenLogFile::getLogTable (void)"
+
+.PP
+Get the \fBLog\fP Table object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+std::vector<log> Dados do arquivo de configuração 
+.RE
+.PP
+
+.PP
+Definition at line 63 of file OpenLogFile\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Operação “Leva Jeito” from the source code\&.

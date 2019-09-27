@@ -1,9 +1,0 @@
-<map id="src/Guarda.cpp" name="src/Guarda.cpp">
-<area shape="rect" id="node2" href="$_guarda_8hpp.html" title="Classe de controle. " alt="" coords="879,155,969,181"/>
-<area shape="rect" id="node5" href="$_check_hash_table_8hpp.html" title="Classe para comparar os arquivos com o da tabela de configuraçao. " alt="" coords="473,80,621,107"/>
-<area shape="rect" id="node8" href="$_create_hash_table_8hpp.html" title="Classe para a criação do arquivo de configuração. " alt="" coords="5,80,155,107"/>
-<area shape="rect" id="node9" href="$_open_log_file_8hpp.html" title="Classe para abrir arquivos de log de acordo com o padrão solicitado. " alt="" coords="179,80,299,107"/>
-<area shape="rect" id="node10" href="$_reading_folder_files_8hpp.html" title="Classe para gerenciar a leitura de todos os arquivos de todas as pastas. " alt="" coords="645,80,803,107"/>
-<area shape="rect" id="node11" href="$_report_output_8hpp.html" title="Classe para gerenciar saída de arquivo de log. " alt="" coords="323,80,448,107"/>
-<area shape="rect" id="node7" href="$_log_8hpp.html" title="Classe para gerenciar o modelo de logs. " alt="" coords="281,155,349,181"/>
-</map>

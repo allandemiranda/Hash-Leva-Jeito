@@ -1,0 +1,88 @@
+.TH "HashFile" 3 "Fri Sep 27 2019" "Operação “Leva Jeito”" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HashFile
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HashFile\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBgetHash\fP (void)"
+.br
+.RI "Get the Hash object\&. "
+.ti -1c
+.RI "\fBHashFile\fP (std::string)"
+.br
+.RI "Construct a new Hash File:: Hash File object\&. "
+.ti -1c
+.RI "\fBHashFile\fP (std::string, std::string)"
+.br
+.RI "Construct a new Hash File:: Hash File object\&. "
+.ti -1c
+.RI "\fB~HashFile\fP (void)"
+.br
+.RI "Destroy the Hash File:: Hash File object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file HashFile\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HashFile::HashFile (std::string file)"
+
+.PP
+Construct a new Hash File:: Hash File object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Caminho do arquivo 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file HashFile\&.cpp\&.
+.SS "HashFile::HashFile (std::string file, std::string key)"
+
+.PP
+Construct a new Hash File:: Hash File object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Caminho do arquivo 
+.br
+\fIkey\fP Chave 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file HashFile\&.cpp\&.
+.SS "HashFile::~HashFile (void)"
+
+.PP
+Destroy the Hash File:: Hash File object\&. 
+.PP
+Definition at line 38 of file HashFile\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string HashFile::getHash (void)"
+
+.PP
+Get the Hash object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+std::string Hash 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file HashFile\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Operação “Leva Jeito” from the source code\&.

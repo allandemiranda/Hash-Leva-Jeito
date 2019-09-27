@@ -98,7 +98,7 @@ void CreateHashTable::showLog(void) {
   std::cout << std::setw(sizePath) << std::setfill(' ') << std::left
             << " CAMINHO";
   std::cout << "|";
-  std::cout << std::setw(sizeStatus) << " STATUS";
+  std::cout << std::setw(sizeStatus) << " HASH";
   std::cout << "|" << std::endl;
   std::cout << "+";
   std::cout << std::setw(sizePath) << std::setfill('-') << "";
@@ -106,32 +106,11 @@ void CreateHashTable::showLog(void) {
   std::cout << std::setw(sizeStatus) << "";
   std::cout << "+" << std::endl;
   std::cout << std::setfill(' ');
-  const std::string red("\033[0;31m");
-  const std::string green("\033[1;32m");
-  const std::string yellow("\033[1;33m");
-  const std::string cyan("\033[0;36m");
-  const std::string reset("\033[0m");
   for (Log log : hash_table) {
     std::cout << "| ";
     std::cout << std::setw(sizePath - 1) << log.getFilePath() << "";
     std::cout << "| ";
-    if (log.getHash() == "Arquivo Não Modificado") {
-      // std::cout << cyan + log.getHash() + reset
-      //           << std::setw(sizeStatus - log.getHash().size()) << "";
-    } else {
-      if (log.getHash() == "Arquivo Criado") {
-        std::cout << green + log.getHash() + reset
-                  << std::setw(sizeStatus - log.getHash().size() - 1) << "";
-      }
-      if (log.getHash() == "Arquivo Deletado") {
-        std::cout << red + log.getHash() + reset
-                  << std::setw(sizeStatus - log.getHash().size() - 1) << "";
-      }
-      if (log.getHash() == "Arquivo Modificado") {
-        std::cout << yellow + log.getHash() + reset
-                  << std::setw(sizeStatus - log.getHash().size() - 1) << "";
-      }
-    }
+    std::cout << std::setw(sizeStatus - 1) << log.getHash();
     std::cout << "|" << std::endl;
   }
   std::cout << "+";

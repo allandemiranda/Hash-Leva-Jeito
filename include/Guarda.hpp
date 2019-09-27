@@ -18,6 +18,7 @@ class Guarda {
  private:
   std::string outFileData = ".guarda/data.g";
   void setOutFileData(std::string);
+  std::string correctionPath(std::string);
 
  public:
   Guarda(std::string, std::string);

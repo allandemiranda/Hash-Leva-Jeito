@@ -1,0 +1,121 @@
+.TH "Guarda" 3 "Fri Sep 27 2019" "Operação “Leva Jeito”" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Guarda
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Guarda\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGuarda\fP (std::string, std::string)"
+.br
+.RI "Construct a new \fBGuarda\fP:: \fBGuarda\fP object para método HASH e sem saída em arquivo\&. "
+.ti -1c
+.RI "\fBGuarda\fP (std::string, std::string, std::string)"
+.br
+.RI "Construct a new \fBGuarda\fP:: \fBGuarda\fP object para método HMAC e sem saída em arquivo\&. "
+.ti -1c
+.RI "\fBGuarda\fP (std::string, std::string, bool, std::string)"
+.br
+.RI "Construct a new \fBGuarda\fP:: \fBGuarda\fP object para método HASH e com saída em arquivo\&. "
+.ti -1c
+.RI "\fBGuarda\fP (std::string, std::string, std::string, bool, std::string)"
+.br
+.RI "Construct a new \fBGuarda\fP:: \fBGuarda\fP object para método HMAC e com saída em arquivo\&. "
+.ti -1c
+.RI "\fB~Guarda\fP (void)"
+.br
+.RI "Destroy the \fBGuarda\fP:: \fBGuarda\fP object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file Guarda\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Guarda::Guarda (std::string opcao, std::string pasta)"
+
+.PP
+Construct a new \fBGuarda\fP:: \fBGuarda\fP object para método HASH e sem saída em arquivo\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIopcao\fP Opção selecionada 
+.br
+\fIpasta\fP Pasta a ser operada 
+.RE
+.PP
+
+.PP
+Definition at line 29 of file Guarda\&.cpp\&.
+.SS "Guarda::Guarda (std::string opcao, std::string pasta, std::string senha)"
+
+.PP
+Construct a new \fBGuarda\fP:: \fBGuarda\fP object para método HMAC e sem saída em arquivo\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIopcao\fP Opção selecionada 
+.br
+\fIpasta\fP Pasta a ser operada 
+.br
+\fIsenha\fP Senha Hmac 
+.RE
+.PP
+
+.PP
+Definition at line 63 of file Guarda\&.cpp\&.
+.SS "Guarda::Guarda (std::string opcao, std::string pasta, bool saida, std::string destino)"
+
+.PP
+Construct a new \fBGuarda\fP:: \fBGuarda\fP object para método HASH e com saída em arquivo\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIopcao\fP Opção selecionada 
+.br
+\fIpasta\fP Pasta a ser operada 
+.br
+\fIsaida\fP Opção de saída ativada 
+.br
+\fIdestino\fP Destino da saída 
+.RE
+.PP
+
+.PP
+Definition at line 98 of file Guarda\&.cpp\&.
+.SS "Guarda::Guarda (std::string opcao, std::string pasta, std::string senha, bool saida, std::string destino)"
+
+.PP
+Construct a new \fBGuarda\fP:: \fBGuarda\fP object para método HMAC e com saída em arquivo\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIopcao\fP Opção selecionada 
+.br
+\fIpasta\fP Pasta a ser operada 
+.br
+\fIsenha\fP Senha Hmac 
+.br
+\fIsaida\fP Opção de saída ativada 
+.br
+\fIdestino\fP Destino da saída 
+.RE
+.PP
+
+.PP
+Definition at line 141 of file Guarda\&.cpp\&.
+.SS "Guarda::~Guarda (void)"
+
+.PP
+Destroy the \fBGuarda\fP:: \fBGuarda\fP object\&. 
+.PP
+Definition at line 179 of file Guarda\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Operação “Leva Jeito” from the source code\&.

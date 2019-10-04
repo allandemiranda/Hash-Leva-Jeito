@@ -28,19 +28,21 @@ permita garantir a autenticação de um conjunto de arquivos para uma determinad
 (recursivamente). O programa deverá ser executado em linha de comando, seguindo a
 sintaxe:
 
-./guarda <metodo> <opcao> <pasta> <saida>
+./guarda < metodo > < opcao > < pasta > < saida >
 
-― <metodo> : indica o método a ser utilizado ( --hash ou --hmac senha)
-― <opcao>: indica a ação a ser desempenhada pelo programa
-• -i : inicia a guarda da pasta indicada em <pasta>, ou seja, faz a leitura de todos os arquivos da pasta (recursivamente)
-registrando os dados e Hash/HMAC de cada um e armazenando numa estrutura própria (Ex: tabela hash em uma
-subpasta oculta ./guarda – ou pode ser usada uma árvore B)
-• -t : faz o rastreio (tracking) da pasta indicada em <pasta>, inserindo informações sobre novos arquivos e indicando
-alterações detectadas/exclusões
+― < metodo > : indica o método a ser utilizado ( --hash ou --hmac senha)
+
+― < opcao >: indica a ação a ser desempenhada pelo programa
+
+• -i : inicia a guarda da pasta indicada em < pasta >, ou seja, faz a leitura de todos os arquivos da pasta (recursivamente) registrando os dados e Hash/HMAC de cada um e armazenando numa estrutura própria (Ex: tabela hash em uma subpasta oculta ./guarda – ou pode ser usada uma árvore B)
+
+• -t : faz o rastreio (tracking) da pasta indicada em < pasta >, inserindo informações sobre novos arquivos e indicando alterações detectadas/exclusões
+
 • -x : desativa a guarda e remove a estrutura alocada
-― <pasta> : indica a pasta a ser “guardada”
-― <saida> : indica o arquivo de saída para o relatório (-o saída). Caso não seja passado este parâmetro, a
-saída deve ser feita em tela.
+
+― < pasta > : indica a pasta a ser “guardada”
+
+― < saida > : indica o arquivo de saída para o relatório (-o saída). Caso não seja passado este parâmetro, a saída deve ser feita em tela.
 
 ## Requisitos
 
@@ -67,3 +69,9 @@ Para instalar e executar o programa siga as instruções:
 2. `cd criptografia-simetrica/` 
 3. `./bin/guarda <metodo> <opcao> <pasta> <saída>` 
 4. A utilização destes argumentos de entrada estão descritos no item de implementação.
+
+## Exemplo de utilização
+
+1. <a href="Exemplo1.pdf">Utilizando HASH</a>
+
+2. <a href="Exemplo2.pdf">Utilizando HMAC</a>

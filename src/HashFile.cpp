@@ -4,15 +4,16 @@
  * @brief Métodos para classe HashFile
  * @version 0.1
  * @date 25-09-2019
- * 
+ *
  * @copyright Copyright (c) 2019
- * 
+ *
  */
 
 #include "HashFile.hpp"
 #include <openssl/hmac.h>
 #include <openssl/md5.h>
 #include <boost/iostreams/device/mapped_file.hpp>
+#include <fstream>
 #include <iomanip>
 #include <sstream>
 
@@ -25,7 +26,7 @@ HashFile::HashFile(std::string file) { setHash(file); }
 
 /**
  * @brief Construct a new Hash File:: Hash File object
- * 
+ *
  * @param file Caminho do arquivo
  * @param key Chave
  */
@@ -51,8 +52,15 @@ std::string HashFile::getHash(void) { return hash; }
  */
 void HashFile::setHash(std::string path_file) {
   unsigned char result[MD5_DIGEST_LENGTH];
-  boost::iostreams::mapped_file_source src(path_file);
-  MD5((unsigned char*)src.data(), src.size(), result);
+
+  std::ifstream file;
+  file.open(path_file, std::ios::binary);
+  std::vector<unsigned char> buffer(std::istreambuf_iterator<char>(file), {});
+  MD5((unsigned char*)buffer.data(), buffer.size(), result);
+
+  // boost::iostreams::mapped_file_source src(path_file);
+  // MD5((unsigned char*)src.data(), src.size(), result);
+
   std::ostringstream sout;
   sout << std::hex << std::setfill('0');
   for (auto c : result) sout << std::setw(2) << (int)c;
@@ -67,11 +75,19 @@ void HashFile::setHash(std::string path_file) {
  */
 void HashFile::setHmac(std::string path_file, std::string new_key) {
   unsigned char result[MD5_DIGEST_LENGTH];
-  boost::iostreams::mapped_file_source src(path_file);
   char key[new_key.size() + 1];
   strcpy(key, new_key.c_str());
-  HMAC(EVP_md5(), key, strlen(key), (unsigned char*)src.data(), src.size(),
-       result, NULL);
+
+  std::ifstream file;
+  file.open(path_file, std::ios::binary);
+  std::vector<unsigned char> buffer(std::istreambuf_iterator<char>(file), {});
+  HMAC(EVP_md5(), key, strlen(key), (unsigned char*)buffer.data(),
+       buffer.size(), result, NULL);
+
+  // boost::iostreams::mapped_file_source src(path_file);
+  // HMAC(EVP_md5(), key, strlen(key), (unsigned char*)src.data(), src.size(),
+  //      result, NULL);
+
   std::ostringstream sout;
   sout << std::hex << std::setfill('0');
   for (auto c : result) sout << std::setw(2) << (int)c;
